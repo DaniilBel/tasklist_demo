@@ -26,6 +26,6 @@ public class Task implements Serializable {
 
     @Column(name = "image")
     @CollectionTable(name = "tasks_images")
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> images;
 }
