@@ -13,8 +13,8 @@ import org.project.tasklist_demo.service.props.MinioProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.UUID;
 
 @Service
@@ -69,7 +69,7 @@ public class ImageServiceImpl implements ImageService {
     }
 
     private String getExtension(final MultipartFile file) {
-        return file.getOriginalFilename()
+        return Objects.requireNonNull(file.getOriginalFilename())
                 .substring(file.getOriginalFilename().lastIndexOf(".") + 1);
     }
 

@@ -1,9 +1,6 @@
 package org.project.tasklist_demo.service;
 
-import org.project.tasklist_demo.domain.task.Task;
 import org.project.tasklist_demo.domain.user.User;
-
-import java.util.List;
 
 public interface UserService {
 

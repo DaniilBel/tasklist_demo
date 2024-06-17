@@ -1,5 +1,6 @@
 package org.project.tasklist_demo.web.controller;
 
+import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import org.project.tasklist_demo.domain.exception.*;
 import org.springframework.http.HttpStatus;
@@ -67,7 +68,7 @@ public class ControllerAdvice {
         exceptionBody.setErrors(e.getConstraintViolations().stream()
                 .collect(Collectors.toMap(
                         violation -> violation.getPropertyPath().toString(),
-                        violation -> violation.getMessage()
+                        ConstraintViolation::getMessage
                 )));
         return exceptionBody;
     }
@@ -75,7 +76,7 @@ public class ControllerAdvice {
     @ExceptionHandler(AuthenticationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionBody handleAuthentication(final AuthenticationException e) {
-        return new ExceptionBody("Authentication failed");
+        return new ExceptionBody("Authentication failed: " + e.getMessage());
     }
 
     @ExceptionHandler(ImageUploadException.class)
