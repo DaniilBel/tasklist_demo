@@ -30,7 +30,7 @@ public class User implements Serializable {
     @Enumerated(value = EnumType.STRING)
     private Set<Role> roles;
 
-//    @CollectionTable(name = "users_tasks")
+    //    @CollectionTable(name = "users_tasks")
     @OneToMany
     @JoinColumn(name = "task_id")
     private List<Task> tasks;
