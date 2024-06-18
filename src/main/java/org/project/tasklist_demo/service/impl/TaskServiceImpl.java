@@ -3,18 +3,18 @@ package org.project.tasklist_demo.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.project.tasklist_demo.domain.exception.ResourceNotFoundException;
 import org.project.tasklist_demo.domain.task.Status;
+import org.project.tasklist_demo.domain.task.Task;
 import org.project.tasklist_demo.domain.task.TaskImage;
 import org.project.tasklist_demo.domain.user.User;
 import org.project.tasklist_demo.repository.TaskRepository;
 import org.project.tasklist_demo.service.ImageService;
+import org.project.tasklist_demo.service.TaskService;
 import org.project.tasklist_demo.service.UserService;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.transaction.annotation.Transactional;
-import org.project.tasklist_demo.domain.task.Task;
-import org.project.tasklist_demo.service.TaskService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

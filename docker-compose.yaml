@@ -19,10 +19,10 @@ services:
       - redis
     env_file:
       - .env
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/tasklist?currentSchema=tasklist
-#      - SPRING_DATASOURCE_USERNAME=postgres
-#      - SPRING_DATASOURCE_PASSWORD=1234
+    #    environment:
+    #      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/tasklist?currentSchema=tasklist
+    #      - SPRING_DATASOURCE_USERNAME=postgres
+    #      - SPRING_DATASOURCE_PASSWORD=1234
     ports:
       - '8080:8080'
 
